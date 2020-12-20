@@ -3,8 +3,8 @@ package db_test
 import (
 	"testing"
 
-	"github.com/BlogByFourMan/Server/dal/db"
-	"github.com/BlogByFourMan/Server/dal/model"
+	"github.com/Service-computing-web/Server/db"
+	"github.com/Service-computing-web/Server/model"
 	"github.com/boltdb/bolt"
 )
 
