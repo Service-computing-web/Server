@@ -1,2 +1,5 @@
-# Server
-简单 web 服务与客户端开发实战-Server
+# Simple Blog Server
+## install
+go get -v github.com/BLogByFourMan/Server
+## run
+go run main.go
