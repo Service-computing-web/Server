@@ -10,7 +10,7 @@ import (
 )
 
 // SecretKey : secret key for jwt
-const SecretKey = "123qwe"
+const SecretKey = "1145141919810"
 
 func ValidateToken(w http.ResponseWriter, r *http.Request) (*jwt.Token, bool) {
 	token, err := request.ParseFromRequest(r, request.AuthorizationHeaderExtractor,

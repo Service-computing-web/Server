@@ -13,7 +13,7 @@ import (
 	"github.com/boltdb/bolt"
 )
 
-func GetDBPATH() string {
+func GetDataBasePath() string {
 	ostype := runtime.GOOS
 	if ostype == "windows" {
 		pt, _ := os.Getwd()
@@ -21,7 +21,7 @@ func GetDBPATH() string {
 	}
 	return path.Join(os.Getenv("GOPATH"), "src", "github.com", "BlogByFourMan", "Server", "dal", "db", "Blog.db")
 }
-func Init() {
+func Initial() {
 	db, err := bolt.Open(GetDBPATH(), 0600, nil)
 	if err != nil {
 		log.Fatal(err)
@@ -52,9 +52,9 @@ func Init() {
 
 }
 
-// PutArticles : put articles to article of blog.db
+// AddArticles : put articles to article of blog.db
 //
-func PutArticles(articles []model.Article) error {
+func AddArticles(articles []model.Article) error {
 	db, err := bolt.Open(GetDBPATH(), 0600, nil)
 	if err != nil {
 		log.Fatal(err)
@@ -81,7 +81,7 @@ func PutArticles(articles []model.Article) error {
 	return nil
 }
 
-func PutUsers(users []model.User) error {
+func AddUsers(users []model.User) error {
 	db, err := bolt.Open(GetDBPATH(), 0600, nil)
 	if err != nil {
 		log.Fatal(err)
